@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="大大大橙子">
 <meta property="og:description" content="需要准备以下条件：                 云服务器（是服务器，不是虚拟主机，且至少1G1H）                 预装centos5.8或5.11系统（5系列启动速度快，但yum源缺少，下面会提到）                 需要软件Xhell、WinSCP、navicat                 DNF服务端 一、买服务器    推荐使用阿里云，腾讯云理论上也">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-28T07:11:59.324Z">
+<meta property="og:updated_time" content="2018-01-28T07:16:26.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于毒奶粉的外网架设">
 <meta name="twitter:description" content="需要准备以下条件：                 云服务器（是服务器，不是虚拟主机，且至少1G1H）                 预装centos5.8或5.11系统（5系列启动速度快，但yum源缺少，下面会提到）                 需要软件Xhell、WinSCP、navicat                 DNF服务端 一、买服务器    推荐使用阿里云，腾讯云理论上也">
@@ -93,7 +93,7 @@
         <!-- Table of Contents -->
         
         <p>需要准备以下条件：<br>                 云服务器（是服务器，不是虚拟主机，且至少1G1H）<br>                 预装centos5.8或5.11系统（5系列启动速度快，但yum源缺少，下面会提到）<br>                 需要软件Xhell、WinSCP、navicat<br>                 DNF服务端</p>
-<p>一、买服务器<br>    推荐使用阿里云，腾讯云理论上也可以，但上次我没弄好，也懒得深究<br>    其他云没试过，小伙伴们可以自己尝试下<br>    购买阿里云的小伙伴买的时候选自定义购买<br>                                           计费方式：包年包月<br>                                           地域：随便选，哪个便宜选哪个<br>                                           网络：默认的来，不用动<br>                                           实例：选择其他实例规格<br>                                                       vcpu:1 vcpu<br>                                                       内存：1GB<br>                                                 直接点确定即可<br>                                           公网带宽：按固定带宽1Mbps<br>                                           镜像：点开市场镜像——从镜像市场选择<br>                                                 在弹出的页面搜索CentOS 5.8，然后直接点使用即可<br>                                           储存：按默认来<br>                                           购买量：土豪们，展现你们财力的时候到了，任性吧<br>                                           安全设置：设置密码，登录名默认为root,密码随意设置，实例名称也随意<br>                                           然后点立即购买即可</p>
+<p>一、买服务器<br>    推荐使用阿里云，腾讯云理论上也可以，但上次我没弄好，也懒得深究<br>    其他云没试过，小伙伴们可以自己尝试下<br>    购买阿里云的小伙伴买的时候选自定义购买<br>                                           计费方式：包年包月<br>                                           地域：随便选，哪个便宜选哪个<br>                                           网络：默认的来，不用动<br>                                           实例：选择其他实例规格<br>                                                       vcpu:1 vcpu<br>                                                       内存：1GB<br>                                                 直接点确定即可<br>                                           公网带宽：按固定带宽1Mbps<br>                                           镜像：点开市场镜像——从镜像市场选择<br>                                                 在弹出的页面搜索CentOS 5.8，然后直接点使用即可<br>                                           储存：按默认来<br>                                           购买量：土豪们，展现你们财力的时候到了，任性吧<br>                                           安全设置：设置密码，登录名默认为root,密码随意设置，<br>                                                     实例名称也随意<br>                                           最后点立即购买即可</p>
 <pre><code>以下我将采用阿里云的vps演示
 </code></pre><p>二、下载软件和服务端<br>    软件百度自己搜，都能找到<br>    链接：<a href="https://pan.baidu.com/s/1c3cfCOg" target="_blank" rel="noopener">https://pan.baidu.com/s/1c3cfCOg</a> 密码：h1uu</p>
 <p>三、正式安装</p>
@@ -102,32 +102,32 @@
 
 用WinSCP远程登录阿里云的服务器
 修改/etc/yum.repos.d/CentOS-Base.repo文件的内容为：
-</code></pre><p>[base]<br>name=CentOS-$releasever - Base<br>failovermethod=priority<br>baseurl=<a href="http://vault.centos.org/5.8/os/x86_64/" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/</a><br>gpgcheck=1<br>gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
-<p>#released updates<br>[updates]<br>name=CentOS-$releasever - Updates<br>failovermethod=priority<br>baseurl=<a href="http://vault.centos.org/5.8/updates/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/updates/$basearch/</a><br>gpgcheck=1<br>gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
-<p>#additional packages that may be useful<br>[extras]<br>name=CentOS-$releasever - Extras<br>failovermethod=priority<br>baseurl=<a href="http://vault.centos.org/5.8/extras/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/extras/$basearch/</a><br>gpgcheck=1<br>gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
-<p>#additional packages that extend functionality of existing packages<br>[centosplus]<br>name=CentOS-$releasever - Plus<br>failovermethod=priority<br>baseurl=<a href="http://vault.centos.org/5.8/centosplus/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/centosplus/$basearch/</a><br>gpgcheck=1</p>
-<p>gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
-<p>#contrib - packages by Centos Users<br>[contrib]<br>name=CentOS-$releasever - Contrib<br>failovermethod=priority<br>baseurl=<a href="http://vault.centos.org/5.8/contrib/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/contrib/$basearch/</a><br>gpgcheck=1</p>
-<p>gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
+</code></pre><p>   [base]<br>   name=CentOS-$releasever - Base<br>   failovermethod=priority<br>   baseurl=<a href="http://vault.centos.org/5.8/os/x86_64/" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/</a><br>   gpgcheck=1<br>   gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
+<p>   #released updates<br>   [updates]<br>   name=CentOS-$releasever - Updates<br>   failovermethod=priority<br>   baseurl=<a href="http://vault.centos.org/5.8/updates/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/updates/$basearch/</a><br>   gpgcheck=1<br>   gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
+<p>  #additional packages that may be useful<br>   [extras]<br>   name=CentOS-$releasever - Extras<br>   failovermethod=priority<br>   baseurl=<a href="http://vault.centos.org/5.8/extras/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/extras/$basearch/</a><br>   gpgcheck=1<br>   gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
+<p>   #additional packages that extend functionality of existing packages<br>   [centosplus]<br>   name=CentOS-$releasever - Plus<br>   failovermethod=priority<br>   baseurl=<a href="http://vault.centos.org/5.8/centosplus/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/centosplus/$basearch/</a><br>   gpgcheck=1</p>
+<p>   gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
+<p>   #contrib - packages by Centos Users<br>   [contrib]<br>   name=CentOS-$releasever - Contrib<br>   failovermethod=priority<br>   baseurl=<a href="http://vault.centos.org/5.8/contrib/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/contrib/$basearch/</a><br>   gpgcheck=1</p>
+<p>   gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
 <p>直接复制粘贴即可，然后保存<br>另外在当前文件夹内除CentOS-Base.repo的文件都删除<br>接着将下载好的服务端上传至/root文件夹目录下</p>
 <pre><code>用Xhell远程连接阿里云
 分别输入以下两条命令：
                       yum clean all
                       yum makecache
 接着输入：
-         yum install -y mysql mysql-server mysql-devel           #安装数据库
+         yum install -y mysql mysql-server mysql-devel       #安装数据库
 
-         yum install -y mysql-community-server                   #这个包的yum源似乎已经失效用下面的命令代替
+         yum install -y mysql-community-server               #这个包的yum源似乎已经失效用下面的命令代替
 
-                                                        # wget http://repo.mysql.com/mysql-community-release-el5.rpm 
+                                                      # wget http://repo.mysql.com/mysql-community-release-el5.rpm 
 
-                                                        # ls
+                                                      # ls
 
-                                                        # rpm -ivh mysql-community-release-el5.rpm  
+                                                      # rpm -ivh mysql-community-release-el5.rpm  
 
-                                                        # ls -1 /etc/yum.repos.d/mysql-community* 
+                                                      # ls -1 /etc/yum.repos.d/mysql-community* 
 
-                                                        # yum install mysql-server
+                                                      # yum install mysql-server
 
 
 以下命令参照和修改自老牛的命令
@@ -144,9 +144,6 @@ yum -y install xulrunner.i386
 yum -y install libXtst.i386
 yum -y install gcc gcc-c++ make zlib-devel
 
-#安装数据库
-
-yum install -y mysql mysql-server mysql-devel
 
 #数据库开机启动
 
@@ -163,7 +160,8 @@ chmod -R 777 /root
 chmod -R 777 /var/lib/mysql
 chown -R mysql.mysql /var/lib/mysql/
 
-#重启数据库，如果命令行显示最后一个是绿色的OK，就表示数据库装成功，如果显示的是红色的fail，表示失败，请自行解决，或者等候我补充
+#重启数据库，如果命令行显示最后一个是绿色的OK，就表示数据库装成功，如果显示的是红色的fail，表示失败，
+请自行解决，或者等候我补充
 
 service mysqld restart
 
@@ -201,7 +199,7 @@ echo /var/swapfile swap swap defaults 0 0  &gt;&gt; /etc/fstab
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/28/关于DNF的外网架设/" data-id="cjcydiwed0000i8tuvutg8l34" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/01/28/关于DNF的外网架设/" data-id="cjcygc9zt0001nctu5clhkq7i" class="article-share-link">分享</a>
       
       
       

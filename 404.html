@@ -129,12 +129,16 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dachengzi.cn/404.html" data-id="cjcyuhql20000iotuy13jnb3p" class="article-share-link">分享</a>
+      <a data-url="http://dachengzi.cn/404.html" data-id="cjcyxrm3l0000fctulhs9wg4z" class="article-share-link">分享</a>
       
+	  
       
+	  
+
       
     </footer>
   </div>
+  
   
     
  <script src="/jquery/jquery.min.js"></script>
@@ -297,7 +301,10 @@ window.onload = function() {
 <!-- author:forvoid end -->
 
 <!-- author:forvoid end -->
-
+{% include './comments/livere.swig' %}
+{% elseif theme.livere_uid %}
+      <div id="lv-container" data-id="city" data-uid="{{ theme.livere_uid }}"></div>
+{% endif %}
 
   
     <script type="text/x-mathjax-config">

@@ -129,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dachengzi.cn/404.html" data-id="cjcyxrm3l0000fctulhs9wg4z" class="article-share-link">分享</a>
+      <a data-url="http://dachengzi.cn/404.html" data-id="cjcyycjc80000lwtuqi0gc7mv" class="article-share-link">分享</a>
       
 	  
       
@@ -138,7 +138,25 @@
       
     </footer>
   </div>
-  
+    <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMzY1MC8xMDIwNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->  
+
   
     
  <script src="/jquery/jquery.min.js"></script>
@@ -295,16 +313,15 @@ window.onload = function() {
 
 
 
+
 <!-- author:forvoid begin -->
 <!-- author:forvoid begin -->
 
 <!-- author:forvoid end -->
 
 <!-- author:forvoid end -->
-{% include './comments/livere.swig' %}
-{% elseif theme.livere_uid %}
-      <div id="lv-container" data-id="city" data-uid="{{ theme.livere_uid }}"></div>
-{% endif %}
+
+
 
   
     <script type="text/x-mathjax-config">

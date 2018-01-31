@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="大大大橙子">
 <meta property="og:description" content="需要准备以下条件：                 云服务器（是服务器，不是虚拟主机，且至少1G1H）                 预装centos5.8或5.11系统（5系列启动速度快，但yum源缺少，下面会提到）                 需要软件Xhell、WinSCP、navicat                 DNF服务端">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-30T12:41:47.915Z">
+<meta property="og:updated_time" content="2018-01-31T06:32:45.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于DNF的外网架设">
 <meta name="twitter:description" content="需要准备以下条件：                 云服务器（是服务器，不是虚拟主机，且至少1G1H）                 预装centos5.8或5.11系统（5系列启动速度快，但yum源缺少，下面会提到）                 需要软件Xhell、WinSCP、navicat                 DNF服务端">
@@ -98,74 +98,57 @@
       
         <!-- Table of Contents -->
         
-        <p>需要准备以下条件：<br>                 云服务器（是服务器，不是虚拟主机，且至少1G1H）<br>                 预装centos5.8或5.11系统（5系列启动速度快，但yum源缺少，下面会提到）<br>                 需要软件Xhell、WinSCP、navicat<br>                 DNF服务端<br><a id="more"></a><br>一、买服务器<br>    推荐使用阿里云，腾讯云理论上也可以，但上次我没弄好，也懒得深究<br>    其他云没试过，小伙伴们可以自己尝试下<br>    购买阿里云的小伙伴买的时候选自定义购买<br>                                      计费方式：包年包月<br>                                      地域：随便选，哪个便宜选哪个<br>                                      网络：默认的来，不用动<br>                                      实例：选择其他实例规格<br>                                                       vcpu:1 vcpu<br>                                                       内存：1GB<br>                                                 直接点确定即可<br>                                     公网带宽：按固定带宽1Mbps<br>                                     镜像：点开市场镜像——从镜像市场选择<br>                                           在弹出的页面搜索CentOS 5.8，然后直接点使用即可<br>                                     储存：按默认来<br>                                     购买量：土豪们，展现你们财力的时候到了，任性吧<br>                                     安全设置：设置密码，登录名默认为root,密码随意设置，<br>                                               实例名称也随意<br>                                      最后点立即购买即可</p>
-<pre><code>以下我将采用阿里云的vps演示
-</code></pre><p>二、下载软件和服务端<br>    软件百度自己搜，都能找到<br>    链接：<a href="https://pan.baidu.com/s/1c3cfCOg" target="_blank" rel="noopener">https://pan.baidu.com/s/1c3cfCOg</a> 密码：h1uu</p>
-<p>三、正式安装</p>
-<p>步骤简写，一步一步来工程量太大了，脑壳疼</p>
-<p>用WinSCP远程登录阿里云的服务器<br>修改/etc/yum.repos.d/CentOS-Base.repo文件的内容为：</p>
-<p>   [base]<br>   name=CentOS-$releasever - Base<br>   failovermethod=priority<br>   baseurl=<a href="http://vault.centos.org/5.8/os/x86_64/" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/</a><br>   gpgcheck=1<br>   gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
-<p>   #released updates<br>   [updates]<br>   name=CentOS-$releasever - Updates<br>   failovermethod=priority<br>   baseurl=<a href="http://vault.centos.org/5.8/updates/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/updates/$basearch/</a><br>   gpgcheck=1<br>   gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
-<p>  #additional packages that may be useful<br>   [extras]<br>   name=CentOS-$releasever - Extras<br>   failovermethod=priority<br>   baseurl=<a href="http://vault.centos.org/5.8/extras/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/extras/$basearch/</a><br>   gpgcheck=1<br>   gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
-<p>   #additional packages that extend functionality of existing packages<br>   [centosplus]<br>   name=CentOS-$releasever - Plus<br>   failovermethod=priority<br>   baseurl=<a href="http://vault.centos.org/5.8/centosplus/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/centosplus/$basearch/</a><br>   gpgcheck=1</p>
-<p>   gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
-<p>   #contrib - packages by Centos Users<br>   [contrib]<br>   name=CentOS-$releasever - Contrib<br>   failovermethod=priority<br>   baseurl=<a href="http://vault.centos.org/5.8/contrib/$basearch/" target="_blank" rel="noopener">http://vault.centos.org/5.8/contrib/$basearch/</a><br>   gpgcheck=1</p>
-<p>   gpgkey=<a href="http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5" target="_blank" rel="noopener">http://vault.centos.org/5.8/os/x86_64/RPM-GPG-KEY-CentOS-5</a></p>
+        <p>需要准备以下条件：<br>                 云服务器（是服务器，不是虚拟主机，且至少1G1H）<br>                 预装centos5.8或5.11系统（5系列启动速度快，但yum源缺少，下面会提到）<br>                 需要软件Xhell、WinSCP、navicat<br>                 DNF服务端<br><a id="more"></a></p>
+<h1 id="买服务器"><a href="#买服务器" class="headerlink" title="买服务器"></a>买服务器</h1><pre><code>推荐使用阿里云，腾讯云理论上也可以，但上次我没弄好，也懒得深究
+其他云没试过，小伙伴们可以自己尝试下
+购买阿里云的小伙伴买的时候选自定义购买
+                                  计费方式：包年包月
+                                  地域：随便选，哪个便宜选哪个
+                                  网络：默认的来，不用动
+                                  实例：选择其他实例规格
+                                                   vcpu:1 vcpu
+                                                   内存：1GB
+                                             直接点确定即可
+                                 公网带宽：按固定带宽1Mbps
+                                 镜像：点开市场镜像——从镜像市场选择
+                                       在弹出的页面搜索CentOS 5.8，然后直接点使用即可
+                                 储存：按默认来
+                                 购买量：土豪们，展现你们财力的时候到了，任性吧
+                                 安全设置：设置密码，登录名默认为root,密码随意设置，
+                                           实例名称也随意
+                                  最后点立即购买即可
+
+
+  以下我将采用阿里云的vps演示
+</code></pre><h1 id="下载软件和服务端"><a href="#下载软件和服务端" class="headerlink" title="下载软件和服务端"></a>下载软件和服务端</h1><pre><code>软件百度自己搜，都能找到
+链接：https://pan.baidu.com/s/1c3cfCOg 密码：h1uu
+</code></pre><h1 id="正式安装"><a href="#正式安装" class="headerlink" title="正式安装"></a>正式安装</h1><p>步骤简写，一步一步来工程量太大了，脑壳疼</p>
+<p>用WinSCP远程登录阿里云的服务器<br>修改/etc/yum.repos.d/CentOS-Base.repo文件的内容为：<br>    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"> [base]</span><br><span class="line"> name=CentOS-$releasever - Base </span><br><span class="line"> failovermethod=priority</span><br><span class="line"> baseurl=http://vault.centos.org/<span class="number">5.8</span>/os/x86_64/</span><br><span class="line"> gpgcheck=<span class="number">1</span></span><br><span class="line"> gpgkey=http://vault.centos.org/<span class="number">5.8</span>/os/x86_64/RPM-GPG-KEY-CentOS<span class="number">-5</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">#released updates </span></span><br><span class="line"> [updates]</span><br><span class="line"> name=CentOS-$releasever - Updates</span><br><span class="line"> failovermethod=priority</span><br><span class="line"> baseurl=http://vault.centos.org/<span class="number">5.8</span>/updates/$basearch/</span><br><span class="line"> gpgcheck=<span class="number">1</span></span><br><span class="line"> gpgkey=http://vault.centos.org/<span class="number">5.8</span>/os/x86_64/RPM-GPG-KEY-CentOS<span class="number">-5</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line"> [extras]</span><br><span class="line"> name=CentOS-$releasever - Extras</span><br><span class="line"> failovermethod=priority</span><br><span class="line"> baseurl=http://vault.centos.org/<span class="number">5.8</span>/extras/$basearch/</span><br><span class="line"> gpgcheck=<span class="number">1</span></span><br><span class="line"> gpgkey=http://vault.centos.org/<span class="number">5.8</span>/os/x86_64/RPM-GPG-KEY-CentOS<span class="number">-5</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line"> [centosplus]</span><br><span class="line"> name=CentOS-$releasever - Plus</span><br><span class="line"> failovermethod=priority</span><br><span class="line"> baseurl=http://vault.centos.org/<span class="number">5.8</span>/centosplus/$basearch/</span><br><span class="line"> gpgcheck=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"> gpgkey=http://vault.centos.org/<span class="number">5.8</span>/os/x86_64/RPM-GPG-KEY-CentOS<span class="number">-5</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">#contrib - packages by Centos Users</span></span><br><span class="line"> [contrib]</span><br><span class="line"> name=CentOS-$releasever - Contrib</span><br><span class="line"> failovermethod=priority</span><br><span class="line"> baseurl=http://vault.centos.org/<span class="number">5.8</span>/contrib/$basearch/</span><br><span class="line"> gpgcheck=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"> gpgkey=http://vault.centos.org/<span class="number">5.8</span>/os/x86_64/RPM-GPG-KEY-CentOS<span class="number">-5</span></span><br></pre></td></tr></table></figure></p>
 <p>直接复制粘贴即可，然后保存<br>另外在当前文件夹内除CentOS-Base.repo的文件都删除<br>接着将下载好的服务端上传至/root文件夹目录下</p>
-<p>用Xhell远程连接阿里云<br>分别输入以下两条命令：<br>                          yum clean all<br>                          yum makecache<br>接着输入：<br>             yum install -y mysql mysql-server mysql-devel  #安装数据库</p>
-<pre><code>yum install -y mysql-community-server #这个包的yum源似乎已经失效用下面的命令代替
-
-                     # wget http://repo.mysql.com/mysql-community-release-el5.rpm 
-
-                     # ls
-
-                     # rpm -ivh mysql-community-release-el5.rpm  
-
-                     # ls -1 /etc/yum.repos.d/mysql-community* 
-
-                     # yum install mysql-server
-</code></pre><p>以下命令参照和修改自老牛社区的命令</p>
+<p>用Xhell远程连接阿里云<br>分别输入以下两条命令：<br>    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">	                      yum clean all</span><br><span class="line">                          yum makecache</span><br><span class="line">    ```						  </span><br><span class="line">接着输入：</span><br><span class="line">    ```python</span><br><span class="line">	         yum install -y mysql mysql-server mysql-devel  <span class="comment">#安装数据库</span></span><br><span class="line">             yum install -y mysql-community-server <span class="comment">#这个包的yum源似乎已经失效用下面的命令代替</span></span><br><span class="line">                                  <span class="comment"># wget http://repo.mysql.com/mysql-community-release-el5.rpm </span></span><br><span class="line">                                  <span class="comment"># ls</span></span><br><span class="line">                                  <span class="comment"># rpm -ivh mysql-community-release-el5.rpm  </span></span><br><span class="line">                                  <span class="comment"># ls -1 /etc/yum.repos.d/mysql-community* </span></span><br><span class="line">                                  <span class="comment"># yum install mysql-server</span></span><br></pre></td></tr></table></figure></p>
+<p>以下命令参照和修改自老牛社区的命令</p>
 <p>#关闭防火墙和防火墙自启</p>
 <pre><code>service iptables stop
 chkconfig iptables off
 </code></pre><p>#安装支持库</p>
 <pre><code>                              #个别可能没有安装包可供安装，没关系 
-yum -y install glibc.i386
-yum -y install xulrunner.i386               
-yum -y install libXtst.i386
-yum -y install gcc gcc-c++ make zlib-devel
-</code></pre><p>#数据库开机启动</p>
-<pre><code>chkconfig mysqld on
-</code></pre><p>#解压下载的文件</p>
-<pre><code>tar -zxvf ./DNFServer.tar.gz -C /
-</code></pre><p>3.设置对应权限</p>
-<p>#home root mysql文件夹全部权限</p>
-<pre><code>chmod -R 777 /home
-chmod -R 777 /root
-chmod -R 777 /var/lib/mysql
-chown -R mysql.mysql /var/lib/mysql/
-</code></pre><p>#重启数据库，如果命令行显示最后一个是绿色的OK，就表示数据库装成功，如果显示的是红色的fail，<br>表示失败，请自行解决，或者等候我补充</p>
-<pre><code>service mysqld restart
-</code></pre><p>4.编译GeoIP</p>
-<pre><code>cd /home/GeoIP-1.4.8/
-./configure
-make clean
-make
-make check
-make install
-</code></pre><p>5.修改对应位置的外网IP<br>用Navicat打开数据库d_taiwan的db_connect表，把db_ip字段所有的192.168.200.131改成你的外网IP。<br>连接地址：你服务器的公网ip<br>账号game  密码uu5!^%jg</p>
-<p>#服务端程序里面的用命令改，注意把“你的外网IP”替换成你的外网IP</p>
-<pre><code>cd /home/dxf/
-sed -i &quot;s/192.168.200.131/这个位置填你外网ip/g&quot; `find . -type f -name &quot;*.tbl&quot;`
-sed -i &quot;s/192.168.200.131/这个位置填你外网ip/g&quot; `find . -type f -name &quot;*.cfg&quot;`
-</code></pre><p>#虚拟内存<br>    cd /var/<br>    dd if=/dev/zero of=swapfile bs=1M count=8192<br>    mkswap swapfile<br>    swapon swapfile<br>    echo /var/swapfile swap swap defaults 0 0  &gt;&gt; /etc/fstab</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum -y install glibc.i386</span><br><span class="line">yum -y install xulrunner.i386               </span><br><span class="line">yum -y install libXtst.i386</span><br><span class="line">yum -y install gcc gcc-c++ make zlib-devel</span><br></pre></td></tr></table></figure>
+</code></pre><p>#数据库开机启动<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig mysqld on</span><br></pre></td></tr></table></figure></p>
+<p>#解压下载的文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf ./DNFServer.tar.gz -C /</span><br></pre></td></tr></table></figure></p>
+<p>3.设置对应权限</p>
+<p>#home root mysql文件夹全部权限<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chmod -R <span class="number">777</span> /home</span><br><span class="line">chmod -R <span class="number">777</span> /root</span><br><span class="line">chmod -R <span class="number">777</span> /var/lib/mysql</span><br><span class="line">chown -R mysql.mysql /var/lib/mysql/</span><br></pre></td></tr></table></figure></p>
+<p>#重启数据库，如果命令行显示最后一个是绿色的OK，就表示数据库装成功，如果显示的是红色的fail，<br>表示失败，请自行解决，或者等候我补充<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure></p>
+<p>4.编译GeoIP<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /home/GeoIP<span class="number">-1.4</span><span class="number">.8</span>/</span><br><span class="line">./configure</span><br><span class="line">make clean</span><br><span class="line">make</span><br><span class="line">make check</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p>
+<p>5.修改对应位置的外网IP<br>用Navicat打开数据库d_taiwan的db_connect表，把db_ip字段所有的192.168.200.131改成你的外网IP。<br>连接地址：你服务器的公网ip<br>账号game  密码uu5!^%jg</p>
+<p>#服务端程序里面的用命令改，注意把“你的外网IP”替换成你的外网IP<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/dxf/</span><br><span class="line">sed -i <span class="string">"s/192.168.200.131/这个位置填你外网ip/g"</span> `find . -type f -name <span class="string">"*.tbl"</span>`</span><br><span class="line">sed -i <span class="string">"s/192.168.200.131/这个位置填你外网ip/g"</span> `find . -type f -name <span class="string">"*.cfg"</span>`</span><br></pre></td></tr></table></figure></p>
+<p>#虚拟内存<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /var/</span><br><span class="line">dd <span class="keyword">if</span>=/dev/zero of=swapfile bs=<span class="number">1</span>M count=<span class="number">8192</span></span><br><span class="line">mkswap swapfile </span><br><span class="line">swapon swapfile</span><br><span class="line">echo /var/swapfile swap swap defaults <span class="number">0</span> <span class="number">0</span>  &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure></p>
 <p>服务端架设到此结束<br>其他的等待补充</p>
 <pre><code>——————此教程内容欠缺，目前仅用来测试页面效果——————
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dachengzi.cn/2018/01/28/关于DNF的外网架设/" data-id="cjd1pi6yt0005ustu3nvinwdy" class="article-share-link">分享</a>
+      <a data-url="http://dachengzi.cn/2018/01/28/关于DNF的外网架设/" data-id="cjd2n3bz40004s4tum27ledun" class="article-share-link">分享</a>
       
 	  
       
@@ -276,38 +259,24 @@ sed -i &quot;s/192.168.200.131/这个位置填你外网ip/g&quot; `find . -type 
 
   
     
-  
+    <div class="widget-wrap">
     
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/01/29/让文章仅显示摘要部分/">让文章仅显示摘要部分</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/29/视频：圣诞夜pgone/">视频：圣诞夜pgone</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/29/视频：以父之名pgone/">视频：以父之名pgone</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/28/关于DNF的外网架设/">关于DNF的外网架设</a>
-          </li>
-        
-      </ul>
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#买服务器"><span class="toc-number">1.</span> <span class="toc-text">买服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下载软件和服务端"><span class="toc-number">2.</span> <span class="toc-text">下载软件和服务端</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正式安装"><span class="toc-number">3.</span> <span class="toc-text">正式安装</span></a></li></ol>
+          </div>
+      </div>
     </div>
-  </div>
 
+  
+    
+
+  
+    
+  
+    
   
     
 

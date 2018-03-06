@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>让文章仅显示摘要部分 | 小大白的博客</title>
+  <title>解决80端口占用问题 | 小大白的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="博客首页文章默认是显示所有内容，而不是截取摘要缩略显示，百度到的解决方法是在文章中间添加">
+  <meta name="description" content="win7 win10下80端口被System进程占用的解决方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="让文章仅显示摘要部分">
-<meta property="og:url" content="http://dachengzi.cn/2018/01/29/让文章仅显示摘要部分/index.html">
+<meta property="og:title" content="解决80端口占用问题">
+<meta property="og:url" content="http://dachengzi.cn/2018/03/06/解决80端口占用问题/index.html">
 <meta property="og:site_name" content="小大白的博客">
-<meta property="og:description" content="博客首页文章默认是显示所有内容，而不是截取摘要缩略显示，百度到的解决方法是在文章中间添加">
+<meta property="og:description" content="win7 win10下80端口被System进程占用的解决方法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-31T06:28:11.617Z">
+<meta property="og:updated_time" content="2018-03-06T13:11:47.787Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让文章仅显示摘要部分">
-<meta name="twitter:description" content="博客首页文章默认是显示所有内容，而不是截取摘要缩略显示，百度到的解决方法是在文章中间添加">
+<meta name="twitter:title" content="解决80端口占用问题">
+<meta name="twitter:description" content="win7 win10下80端口被System进程占用的解决方法">
   
     <link rel="alternate" href="/atom.xml" title="小大白的博客" type="application/atom+xml">
   
@@ -71,10 +71,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-让文章仅显示摘要部分" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-解决80端口占用问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/29/让文章仅显示摘要部分/" class="article-date">
-  <time datetime="2018-01-29T07:57:43.000Z" itemprop="datePublished">2018-01-29</time>
+    <a href="/2018/03/06/解决80端口占用问题/" class="article-date">
+  <time datetime="2018-03-06T13:01:57.000Z" itemprop="datePublished">2018-03-06</time>
 </a>
     
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      让文章仅显示摘要部分
+      解决80端口占用问题
     </h1>
   
 
@@ -95,16 +95,20 @@
       
         <!-- Table of Contents -->
         
-        <p>博客首页文章默认是显示所有内容，而不是截取摘要缩略显示，百度到的解决方法是在文章中间添加<a id="more"></a>代码，从而能让这个代码上面的内容显示，下面的则折叠起来，并显示 继续阅读全文 的按钮，点击按钮后，页面就会自动跳转到该文章页面。</p>
-<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h1><p>正文内容<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more&gt;</span><br></pre></td></tr></table></figure></p>
-<p>正文内容</p>
-<h1 id="继续阅读全文改为阅读全文"><a href="#继续阅读全文改为阅读全文" class="headerlink" title="继续阅读全文改为阅读全文"></a>继续阅读全文改为阅读全文</h1><p>但是问题来了，它跳转页面后自动定位到代码以下的内容，想看上面从头开始看需要手动翻阅，感觉有点麻烦，百度了好长时间也没有找到方法来解决这个问题。所以只好自己慢慢探索，通过查看主页的源代码我找到了问题的答案。自动跳转是因为 “继续阅读全文” 所在的p标签内存在这一个article-more-link的class类名，由此我又开始了探索的过程，最后我在那个p标签里面的a标签看到了#more的字样，我猜想它就是靠这个来定位内容的，删除more这个字样后重新部署了博客，问题果然解决了，点击 继续阅读全文 能够从头开始。</p>
+        <p>win7 win10下80端口被System进程占用的解决方法 </p>
+<a id="more"></a>
+<p>该内容转自—-</p>
+<blockquote>
+<p>CSDN<br><a href="http://blog.csdn.net/whatday/article/details/50610775" target="_blank" rel="noopener">http://blog.csdn.net/whatday/article/details/50610775</a></p>
+</blockquote>
+<p>用如下方法可以解决System进程占用80端口的问题：<br>打开RegEdit:开始-运行-输入regedit-调出注册表<br>找到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP<br>找到一个DWORD值Start，将其改为0<br>重启电脑，System进程将不会占用80端口<br>就可以打开你的apache了</p>
+<p>这种方法确实暂时解决了我的问题，应该就是这样的，但是后面又来问题了。Apache又无缘无故的打不开了。于是，最后终于发现了进程有个SQL Server ReportingServices，这个是sql servers带有的，而且自动运行，关闭它，就可以了。但是切记，可能这个进程会自动打开，所以先把apache打开，这个的话后面SQL Server ReportingServices运行也不会占用80端口了。我用的360查找的<br>我的问题总算是解决了。最后总结一下吧。</p>
+<p>查询：查看占用80端口的信息，那么可以在cmd窗口输入netstat -ano | findstr “80” 命令<br>常见的几种情况：<br>1、迅雷等程序或者一些其他有上传功能的软件都会占用电脑的80端口<br>2、netstat -abno后查看，经过查找为pid=4的system进程，因为是系统进程，也无法结束它，经查SQL Server ReportingServices (SQLEXPRESS) 服务占用80端口，停止SQL Server ReportingServices后APache正常启动.<br>3、卸载internet信息服务–&gt;万维网服务。这个是最常见的故障，或者其他一些第三方的服务器软件，必须在进程里面结束，才有效果。<br>备注：杀掉进程的命令：taskkill /pid 4 /f其中 /f表示强制关闭该进程 </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dachengzi.cn/2018/01/29/让文章仅显示摘要部分/" data-id="cjefo2s3k0006fgtuy1zt3uil" class="article-share-link">分享</a>
+      <a data-url="http://dachengzi.cn/2018/03/06/解决80端口占用问题/" data-id="cjefo2s3a0003fgtufb168s8k" class="article-share-link">分享</a>
       
 	  
       
@@ -178,19 +182,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/01/31/GitHub博客个人域名使用htpps协议/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          GitHub博客个人域名使用htpps协议
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/28/关于DNF的外网架设/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/01/31/GitHub博客个人域名使用htpps协议/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">关于DNF的外网架设</div>
+      <div class="article-nav-title">GitHub博客个人域名使用htpps协议</div>
     </a>
   
 </nav>
@@ -220,24 +215,38 @@
 
   
     
-    <div class="widget-wrap">
+  
     
-      <div class="widget" id="toc-widget-fixed">
-      
-        <strong class="toc-title">文章目录</strong>
-        <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#代码："><span class="toc-number">1.</span> <span class="toc-text">代码：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用方法："><span class="toc-number">2.</span> <span class="toc-text">使用方法：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#继续阅读全文改为阅读全文"><span class="toc-number">3.</span> <span class="toc-text">继续阅读全文改为阅读全文</span></a></li></ol>
-          </div>
-      </div>
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title recent-posts">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/06/解决80端口占用问题/">解决80端口占用问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/31/GitHub博客个人域名使用htpps协议/">GitHub博客个人域名使用htpps协议</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/29/让文章仅显示摘要部分/">让文章仅显示摘要部分</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/28/关于DNF的外网架设/">关于DNF的外网架设</a>
+          </li>
+        
+      </ul>
     </div>
+  </div>
 
-  
-    
-
-  
-    
-  
-    
   
     
 

@@ -15,8 +15,8 @@
 <meta property="og:image" content="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180209/e98cAhbC78.jpg?imageslim">
 <meta property="og:image" content="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/DC2kA4EEI7.jpg?imageslim">
 <meta property="og:image" content="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/ma4j7mllFG.jpg?imageslim">
-<meta property="og:image" content="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/gDC9D8eeK5.jpg?imageslim">
-<meta property="og:updated_time" content="2018-03-15T14:31:47.321Z">
+<meta property="og:image" content="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/0BB8A0c0hE.jpg?imageslim">
+<meta property="og:updated_time" content="2018-03-15T14:36:14.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于DNF的外网架设（第一部分）">
 <meta name="twitter:description" content="第一部分：服务端架设">
@@ -135,7 +135,7 @@ centos5.11系统
 <p>#home root mysql文件夹全部权限<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chmod -R <span class="number">777</span> /home</span><br><span class="line">chmod -R <span class="number">777</span> /root</span><br><span class="line">chmod -R <span class="number">777</span> /var/lib/mysql</span><br><span class="line">chown -R mysql.mysql /var/lib/mysql/</span><br></pre></td></tr></table></figure></p>
 <p>#重启数据库，如果命令行显示最后一个是绿色的OK，就表示数据库装成功，如果显示的是红色的fail，<br>表示失败，请自行解决，或者等候我补充<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure></p>
 <p>4.编译GeoIP<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /home/GeoIP<span class="number">-1.4</span><span class="number">.8</span>/</span><br><span class="line">./configure</span><br><span class="line">make clean</span><br><span class="line">make</span><br><span class="line">make check</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p>
-<p>5.修改对应位置的外网IP<br>用Navicat打开数据库d_taiwan的db_connect表，把db_ip字段所有的192.168.200.131改成你的外网IP。<br>连接地址：你服务器的公网ip<br>账号game  密码uu5!^%jg<br>    <img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/ma4j7mllFG.jpg?imageslim" alt="mark"><br>    <img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/gDC9D8eeK5.jpg?imageslim" alt="mark"></p>
+<p>5.修改对应位置的外网IP<br>用Navicat打开数据库d_taiwan的db_connect表，把db_ip字段所有的192.168.200.131改成你的外网IP。<br>连接地址：你服务器的公网ip<br>账号game  密码uu5!^%jg<br>    <img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/ma4j7mllFG.jpg?imageslim" alt="mark"><br>    <img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/0BB8A0c0hE.jpg?imageslim" alt="mark"></p>
 <p>#服务端程序里面的用命令改，注意把“你的外网IP”替换成你的外网IP<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/dxf/</span><br><span class="line">sed -i <span class="string">"s/192.168.200.131/这个位置填你外网ip/g"</span> `find . -type f -name <span class="string">"*.tbl"</span>`</span><br><span class="line">sed -i <span class="string">"s/192.168.200.131/这个位置填你外网ip/g"</span> `find . -type f -name <span class="string">"*.cfg"</span>`</span><br></pre></td></tr></table></figure></p>
 <p>#虚拟内存<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /var/</span><br><span class="line">dd <span class="keyword">if</span>=/dev/zero of=swapfile bs=<span class="number">1</span>M count=<span class="number">8192</span></span><br><span class="line">mkswap swapfile </span><br><span class="line">swapon swapfile</span><br><span class="line">echo /var/swapfile swap swap defaults <span class="number">0</span> <span class="number">0</span>  &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure></p>
 <p>服务端架设到此结束</p>
@@ -143,7 +143,7 @@ centos5.11系统
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dachengzi.cn/2018/01/28/关于DNF的外网架设/" data-id="cjesm58x4000374tuipq1mtw1" class="article-share-link">分享</a>
+      <a data-url="http://dachengzi.cn/2018/01/28/关于DNF的外网架设/" data-id="cjesmawze000214tun88qb2lx" class="article-share-link">分享</a>
       
 	  
       

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小大白的博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://dachengzi.cn/"/>
+  <updated>2018-03-16T14:43:17.093Z</updated>
+  <id>http://dachengzi.cn/</id>
+  
+  <author>
+    <name>小大白</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Windows系统下部署owncloud个人网盘</title>
+    <link href="http://dachengzi.cn/2018/03/15/%E5%9C%A8Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%83%A8%E7%BD%B2owncloud%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98/"/>
+    <id>http://dachengzi.cn/2018/03/15/在Windows系统下部署owncloud个人网盘/</id>
+    <published>2018-03-15T13:43:32.000Z</published>
+    <updated>2018-03-16T14:43:17.093Z</updated>
+    
+    <content type="html"><![CDATA[<p>owncloud是一个php的网盘程序，免费且功能强大<br><a id="more"></a><br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180316/0c1mg3E4BE.jpg?imageslim" alt="mark"><br>最新的owncloud的程序已经不支持Windows系统下部署了，所以要想在Windows系统下部署owncloud可以采用以下两种方式：<br>一、安装老版本的owncloud程序<br>二、通过虚拟机安装Linux操作系统然后部署owncloud<br>在这里我使用的是第一种方式，安装8.0版本的owncloud的程序，源程序可以在owncloud官网下载</p><p>首先，给Windows系统部署php的环境，在这里使用的是wamp，软件可在官网下载<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/ajEL6H1mhg.jpg?imageslim" alt="mark"><br>接着，解压owncloud压缩包文件到wamp根目录的www文件夹下<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/1emkh7FLd8.jpg?imageslim" alt="mark"><br>最后，打开浏览器输入本地地址127.0.0.1进行相应的设置<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/Ga5975fJfB.jpg?imageslim" alt="mark"><br>完成安装<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/ALIhhBhDH7.jpg?imageslim" alt="mark"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;owncloud是一个php的网盘程序，免费且功能强大&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>win7系统下以管理员方式运行所有程序</title>
+    <link href="http://dachengzi.cn/2018/03/15/win7%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E6%96%B9%E5%BC%8F%E8%BF%90%E8%A1%8C%E6%89%80%E6%9C%89%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://dachengzi.cn/2018/03/15/win7系统下以管理员方式运行所有程序/</id>
+    <published>2018-03-15T13:11:29.000Z</published>
+    <updated>2018-03-16T14:40:15.827Z</updated>
+    
+    <content type="html"><![CDATA[<p>有些程序需要用管理员方式才能正常运行，然而每次都右键然后点以管理员方式运行很麻烦，所以需要对系统进行设置，让软件默认自动以管理员方式运行</p><a id="more"></a><p><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180316/J2DjGjeFDj.jpg?imageslim" alt="mark"><br>首先，右键计算机图标打开计算机管理界面<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/amE3gh2hF9.jpg?imageslim" alt="mark"><br>然后打开系统工具—本地用户和组—用户<br>在这里我另外创建了一个名称为Dimon的用户，如果你默认就是Administrator的账号这步可以直接跳过，如果不是右键你的账号，打开属性—隶属于—添加—输入administrators<br>点确定<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/b6JBhJbAFL.jpg?imageslim" alt="mark"><br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/agcI3BI29E.jpg?imageslim" alt="mark"><br>接着返回桌面，右键需要以管理员方式运行的程序快捷方式，打开属性—快捷方式—高级<br>勾选以用管理员身份运行<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/geIfmm11ll.jpg?imageslim" alt="mark"><br>确定后退出即可每次默认用管理员身份运行程序</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有些程序需要用管理员方式才能正常运行，然而每次都右键然后点以管理员方式运行很麻烦，所以需要对系统进行设置，让软件默认自动以管理员方式运行&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决80端口占用问题</title>
+    <link href="http://dachengzi.cn/2018/03/06/%E8%A7%A3%E5%86%B380%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98/"/>
+    <id>http://dachengzi.cn/2018/03/06/解决80端口占用问题/</id>
+    <published>2018-03-06T13:01:57.000Z</published>
+    <updated>2018-03-06T13:11:47.787Z</updated>
+    
+    <content type="html"><![CDATA[<p>win7 win10下80端口被System进程占用的解决方法 </p><a id="more"></a><p>该内容转自—-</p><blockquote><p>CSDN<br><a href="http://blog.csdn.net/whatday/article/details/50610775" target="_blank" rel="noopener">http://blog.csdn.net/whatday/article/details/50610775</a></p></blockquote><p>用如下方法可以解决System进程占用80端口的问题：<br>打开RegEdit:开始-运行-输入regedit-调出注册表<br>找到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP<br>找到一个DWORD值Start，将其改为0<br>重启电脑，System进程将不会占用80端口<br>就可以打开你的apache了</p><p>这种方法确实暂时解决了我的问题，应该就是这样的，但是后面又来问题了。Apache又无缘无故的打不开了。于是，最后终于发现了进程有个SQL Server ReportingServices，这个是sql servers带有的，而且自动运行，关闭它，就可以了。但是切记，可能这个进程会自动打开，所以先把apache打开，这个的话后面SQL Server ReportingServices运行也不会占用80端口了。我用的360查找的<br>我的问题总算是解决了。最后总结一下吧。</p><p>查询：查看占用80端口的信息，那么可以在cmd窗口输入netstat -ano | findstr “80” 命令<br>常见的几种情况：<br>1、迅雷等程序或者一些其他有上传功能的软件都会占用电脑的80端口<br>2、netstat -abno后查看，经过查找为pid=4的system进程，因为是系统进程，也无法结束它，经查SQL Server ReportingServices (SQLEXPRESS) 服务占用80端口，停止SQL Server ReportingServices后APache正常启动.<br>3、卸载internet信息服务–&gt;万维网服务。这个是最常见的故障，或者其他一些第三方的服务器软件，必须在进程里面结束，才有效果。<br>备注：杀掉进程的命令：taskkill /pid 4 /f其中 /f表示强制关闭该进程 </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;win7 win10下80端口被System进程占用的解决方法 &lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub博客个人域名使用htpps协议</title>
+    <link href="http://dachengzi.cn/2018/01/31/GitHub%E5%8D%9A%E5%AE%A2%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D%E4%BD%BF%E7%94%A8htpps%E5%8D%8F%E8%AE%AE/"/>
+    <id>http://dachengzi.cn/2018/01/31/GitHub博客个人域名使用htpps协议/</id>
+    <published>2018-01-31T07:13:54.000Z</published>
+    <updated>2018-01-31T13:29:56.402Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>GitHub的个人页面实际上可以直接在设置中开启https，但是如果你设置了自己的域名而不是使用username.github.io这样的域名，就不能使用GitHub提供的HTTPS的协议。<br>因此，想要开启https就需要通过另一种方式来实现，本文介绍的是通过CDN来实现个人博客页面使用https <a id="more"></a><br>其基本原理为：<br>                    域名到cdn服务器使用https协议，CDN服务器到GitHub空间为http协议<br>通过这种反向代理的方式来实现https服务</p><blockquote><p>百度百科</p><h1 id="http和https的区别"><a href="#http和https的区别" class="headerlink" title="http和https的区别"></a>http和https的区别</h1><p>超文本传输协议HTTP协议被用于在Web浏览器和网站服务器之间传递信息。HTTP协议以明文方式发送内容，不提供任何方式的数据加密，如果攻击者截取了Web浏览器和网站服务器之间的传输报文，就可以直接读懂其中的信息，因此HTTP协议不适合传输一些敏感信息，比如信用卡号、密码等。<br>为了解决HTTP协议的这一缺陷，需要使用另一种协议：安全套接字层超文本传输协议HTTPS。为了数据传输的安全，HTTPS在HTTP的基础上加入了SSL协议，SSL依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密。<br>HTTPS和HTTP的区别主要为以下四点：<br>一、https协议需要到ca申请证书，一般免费证书很少，需要交费。<br>二、http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。<br>三、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。<br>四、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p></blockquote><h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>首先你的有自己的GitHub空间，并绑定自己的域名<br>接着到<a href="https://www.cloudflare.com" target="_blank" rel="noopener">cloudflare</a>注册并登陆cloudflare<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180131/d8m93Il5ie.jpg?imageslim" alt="mark"></p><p>页面一开始就会让你填你的域名，按照提示填入域名，然后进入下一步<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180131/H44lAD9Hh4.jpg?imageslim" alt="mark"></p><p>这一步它会自动扫描你域名的解析记录，等待扫描完，点继续<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180131/K8DBI4GGDB.jpg?imageslim" alt="mark"></p><p>这一步设置两条CNAME记录指向你的GitHub空间<br> <img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180131/jjlbmh9Lb7.jpg?imageslim" alt="mark"></p><p>这一步需要将你域名原来的dns地址更换成它给你的两条dns服务器地址<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180131/bhkDIILC3G.jpg?imageslim" alt="mark"></p><p>之后进入主页面点击蓝色小锁标志进入Crypto设置页面</p><p><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180131/J90lfbGHka.jpg?imageslim" alt="mark"></p><p>在SSL页面的最右边的方框中选择flexible<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180131/3K2laLH7iD.jpg?imageslim" alt="mark"></p><p>并打开这个按钮<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180131/7g6KfeEimF.jpg?imageslim" alt="mark"></p><p>在一段时间内你可能打不开你的页面，耐心等待即可</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;GitHub的个人页面实际上可以直接在设置中开启https，但是如果你设置了自己的域名而不是使用username.github.io这样的域名，就不能使用GitHub提供的HTTPS的协议。&lt;br&gt;因此，想要开启https就需要通过另一种方式来实现，本文介绍的是通过CDN来实现个人博客页面使用https
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>让文章仅显示摘要部分</title>
+    <link href="http://dachengzi.cn/2018/01/29/%E8%AE%A9%E6%96%87%E7%AB%A0%E4%BB%85%E6%98%BE%E7%A4%BA%E6%91%98%E8%A6%81%E9%83%A8%E5%88%86/"/>
+    <id>http://dachengzi.cn/2018/01/29/让文章仅显示摘要部分/</id>
+    <published>2018-01-29T07:57:43.000Z</published>
+    <updated>2018-01-31T06:28:11.617Z</updated>
+    
+    <content type="html"><![CDATA[<p>博客首页文章默认是显示所有内容，而不是截取摘要缩略显示，百度到的解决方法是在文章中间添加<a id="more"></a>代码，从而能让这个代码上面的内容显示，下面的则折叠起来，并显示 继续阅读全文 的按钮，点击按钮后，页面就会自动跳转到该文章页面。</p><h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure><h1 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h1><p>正文内容<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more&gt;</span><br></pre></td></tr></table></figure></p><p>正文内容</p><h1 id="继续阅读全文改为阅读全文"><a href="#继续阅读全文改为阅读全文" class="headerlink" title="继续阅读全文改为阅读全文"></a>继续阅读全文改为阅读全文</h1><p>但是问题来了，它跳转页面后自动定位到代码以下的内容，想看上面从头开始看需要手动翻阅，感觉有点麻烦，百度了好长时间也没有找到方法来解决这个问题。所以只好自己慢慢探索，通过查看主页的源代码我找到了问题的答案。自动跳转是因为 “继续阅读全文” 所在的p标签内存在这一个article-more-link的class类名，由此我又开始了探索的过程，最后我在那个p标签里面的a标签看到了#more的字样，我猜想它就是靠这个来定位内容的，删除more这个字样后重新部署了博客，问题果然解决了，点击 继续阅读全文 能够从头开始。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;博客首页文章默认是显示所有内容，而不是截取摘要缩略显示，百度到的解决方法是在文章中间添加
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于DNF的外网架设（第一部分）</title>
+    <link href="http://dachengzi.cn/2018/01/28/%E5%85%B3%E4%BA%8EDNF%E7%9A%84%E5%A4%96%E7%BD%91%E6%9E%B6%E8%AE%BE/"/>
+    <id>http://dachengzi.cn/2018/01/28/关于DNF的外网架设/</id>
+    <published>2018-01-28T05:50:11.000Z</published>
+    <updated>2018-03-18T09:28:37.064Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一部分：服务端架设<br><a id="more"></a><br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180316/g7e6FdlF0G.jpg?imageslim" alt="mark"><br>需要准备以下条件：<br>                 云服务器（是服务器，不是虚拟主机，且至少1G1H）<br>                 预装centos5.8或5.11系统（5系列启动速度快，但yum源缺少，下面会提到）<br>                 需要软件Xhell、WinSCP、navicat<br>                 DNF服务端</p><h1 id="买服务器"><a href="#买服务器" class="headerlink" title="买服务器"></a>买服务器</h1><pre><code>推荐使用阿里云，腾讯云理论上也可以，但上次我没弄好，也懒得深究其他云没试过，小伙伴们可以自己尝试下购买阿里云的小伙伴买的时候选自定义购买</code></pre><p><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180209/L95Ei97Kbk.jpg?imageslim" alt="mark"><br>                                      计费方式：包年包月<br>                                      地域：随便选，哪个便宜选哪个<br>                                      网络：默认的来，不用动<br>                                      实例：选择其他实例规格<br>                                                       vcpu:1 vcpu<br>                                                       内存：1GB<br>                                                 直接点确定即可<br>                                     公网带宽：按固定带宽1Mbps<br>                                     镜像：点开市场镜像——从镜像市场选择<br>                                           在弹出的页面搜索CentOS 5.8，然后直接点使用即可<br> <img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180209/e98cAhbC78.jpg?imageslim" alt="mark"><br>                                     储存：按默认来<br>                                     购买量：土豪们，展现你们财力的时候到了，任性吧<br>                                     安全设置：设置密码，登录名默认为root,密码随意设置，<br>                                               实例名称也随意<br>                                      最后点立即购买即可</p><pre><code>以下我将采用阿里云的vps演示centos5.11系统</code></pre><h1 id="下载软件和服务端"><a href="#下载软件和服务端" class="headerlink" title="下载软件和服务端"></a>下载软件和服务端</h1><pre><code>软件百度自己搜，都能找到链接：https://pan.baidu.com/s/1c3cfCOg 密码：h1uu</code></pre><h1 id="正式安装"><a href="#正式安装" class="headerlink" title="正式安装"></a>正式安装</h1><p>步骤简写，一步一步来工程量太大了，脑壳疼</p><p>用WinSCP远程登录阿里云的服务器<br>修改/etc/yum.repos.d/CentOS-Base.repo文件的内容为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"> [base]</span><br><span class="line"> name=CentOS-$releasever - Base </span><br><span class="line"> failovermethod=priority</span><br><span class="line"> baseurl=http://vault.centos.org/<span class="number">5.11</span>/os/x86_64/</span><br><span class="line"> gpgcheck=<span class="number">1</span></span><br><span class="line"> gpgkey=http://vault.centos.org/<span class="number">5.11</span>/os/x86_64/RPM-GPG-KEY-CentOS<span class="number">-5</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">#released updates </span></span><br><span class="line"> [updates]</span><br><span class="line"> name=CentOS-$releasever - Updates</span><br><span class="line"> failovermethod=priority</span><br><span class="line"> baseurl=http://vault.centos.org/<span class="number">5.11</span>/updates/$basearch/</span><br><span class="line"> gpgcheck=<span class="number">1</span></span><br><span class="line"> gpgkey=http://vault.centos.org/<span class="number">5.11</span>/os/x86_64/RPM-GPG-KEY-CentOS<span class="number">-5</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line"> [extras]</span><br><span class="line"> name=CentOS-$releasever - Extras</span><br><span class="line"> failovermethod=priority</span><br><span class="line"> baseurl=http://vault.centos.org/<span class="number">5.8</span>/extras/$basearch/</span><br><span class="line"> gpgcheck=<span class="number">1</span></span><br><span class="line"> gpgkey=http://vault.centos.org/<span class="number">5.11</span>/os/x86_64/RPM-GPG-KEY-CentOS<span class="number">-5</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line"> [centosplus]</span><br><span class="line"> name=CentOS-$releasever - Plus</span><br><span class="line"> failovermethod=priority</span><br><span class="line"> baseurl=http://vault.centos.org/<span class="number">5.11</span>/centosplus/$basearch/</span><br><span class="line"> gpgcheck=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"> gpgkey=http://vault.centos.org/<span class="number">5.11</span>/os/x86_64/RPM-GPG-KEY-CentOS<span class="number">-5</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">#contrib - packages by Centos Users</span></span><br><span class="line"> [contrib]</span><br><span class="line"> name=CentOS-$releasever - Contrib</span><br><span class="line"> failovermethod=priority</span><br><span class="line"> baseurl=http://vault.centos.org/<span class="number">5.11</span>/contrib/$basearch/</span><br><span class="line"> gpgcheck=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"> gpgkey=http://vault.centos.org/<span class="number">5.11</span>/os/x86_64/RPM-GPG-KEY-CentOS<span class="number">-5</span></span><br></pre></td></tr></table></figure></p><p>直接复制粘贴即可，然后保存<br>另外在当前文件夹内除CentOS-Base.repo的文件都删除<br><img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/DC2kA4EEI7.jpg?imageslim" alt="mark"><br>接着将下载好的服务端上传至/root文件夹目录下</p><p>用Xhell远程连接阿里云<br>分别输入以下两条命令：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">接着输入：</span><br><span class="line">    </span><br><span class="line"> yum install -y mysql mysql-server mysql-devel  <span class="comment">#安装数据库</span></span><br><span class="line"> yum install -y mysql-community-server <span class="comment">#这个包的yum源似乎已经失效用下面的命令代替</span></span><br><span class="line">                                 <span class="comment"># wget http://repo.mysql.com/mysql-community-release-el5.rpm </span></span><br><span class="line">                                 <span class="comment"># ls</span></span><br><span class="line">                                 <span class="comment"># rpm -ivh mysql-community-release-el5.rpm  </span></span><br><span class="line">                                 <span class="comment"># ls -1 /etc/yum.repos.d/mysql-community* </span></span><br><span class="line">                                 <span class="comment"># yum install mysql-server</span></span><br></pre></td></tr></table></figure></p><p>#以下命令参照和修改自老牛社区的命令</p><p>#关闭防火墙和防火墙自启<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service iptables stop</span><br><span class="line">chkconfig iptables off</span><br></pre></td></tr></table></figure></p><p>#安装支持库</p><pre><code>                              #个别可能没有安装包可供安装，没关系 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum -y install glibc.i386</span><br><span class="line">yum -y install xulrunner.i386               </span><br><span class="line">yum -y install libXtst.i386</span><br><span class="line">yum -y install gcc gcc-c++ make zlib-devel</span><br></pre></td></tr></table></figure></code></pre><p>#数据库开机启动<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig mysqld on</span><br></pre></td></tr></table></figure></p><p>#解压下载的文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf ./DNFServer.tar.gz -C /</span><br></pre></td></tr></table></figure></p><p>3.设置对应权限</p><p>#home root mysql文件夹全部权限<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chmod -R <span class="number">777</span> /home</span><br><span class="line">chmod -R <span class="number">777</span> /root</span><br><span class="line">chmod -R <span class="number">777</span> /var/lib/mysql</span><br><span class="line">chown -R mysql.mysql /var/lib/mysql/</span><br></pre></td></tr></table></figure></p><p>#重启数据库，如果命令行显示最后一个是绿色的OK，就表示数据库装成功，如果显示的是红色的fail，<br>表示失败，请自行解决，或者等候我补充<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure></p><p>4.编译GeoIP<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /home/GeoIP<span class="number">-1.4</span><span class="number">.8</span>/</span><br><span class="line">./configure</span><br><span class="line">make clean</span><br><span class="line">make</span><br><span class="line">make check</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p><p>5.修改对应位置的外网IP<br>用Navicat打开数据库d_taiwan的db_connect表，把db_ip字段所有的192.168.200.131改成你的外网IP。<br>连接地址：你服务器的公网ip<br>账号game  密码uu5!^%jg<br>    <img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/ma4j7mllFG.jpg?imageslim" alt="mark"><br>    <img src="http://p3esrzn2g.bkt.clouddn.com/dcz6365/180315/0BB8A0c0hE.jpg?imageslim" alt="mark"></p><p>#服务端程序里面的用命令改，注意把“你的外网IP”替换成你的外网IP<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/dxf/</span><br><span class="line">sed -i <span class="string">"s/192.168.200.131/这个位置填你外网ip/g"</span> `find . -type f -name <span class="string">"*.tbl"</span>`</span><br><span class="line">sed -i <span class="string">"s/192.168.200.131/这个位置填你外网ip/g"</span> `find . -type f -name <span class="string">"*.cfg"</span>`</span><br></pre></td></tr></table></figure></p><p>#虚拟内存<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /var/</span><br><span class="line">dd <span class="keyword">if</span>=/dev/zero of=swapfile bs=<span class="number">1</span>M count=<span class="number">8192</span></span><br><span class="line">mkswap swapfile </span><br><span class="line">swapon swapfile</span><br><span class="line">echo /var/swapfile swap swap defaults <span class="number">0</span> <span class="number">0</span>  &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure></p><p>服务端架设到此结束</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;第一部分：服务端架设&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

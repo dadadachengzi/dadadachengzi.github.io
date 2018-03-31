@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dachengzi.cn/"/>
-  <updated>2018-03-19T04:21:08.423Z</updated>
+  <updated>2018-03-31T10:05:26.359Z</updated>
   <id>http://dachengzi.cn/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一个国外的云服务器</title>
+    <link href="http://dachengzi.cn/2018/03/31/Vultr%E2%80%94%E2%80%94%E6%8C%89%E6%97%B6%E9%95%BF%E8%AE%A1%E8%B4%B9%E7%9A%84vps/"/>
+    <id>http://dachengzi.cn/2018/03/31/Vultr——按时长计费的vps/</id>
+    <published>2018-03-31T09:10:37.000Z</published>
+    <updated>2018-03-31T10:05:26.359Z</updated>
+    
+    <content type="html"><![CDATA[<p>vultr<a id="more"></a><br>国外的vps性价比要比国内的高了许多，国内低配的vps每个月大概都在60元人民币左右，而且还限速1M的带宽，实际网速也就在100kb多一点每秒，而国外的云服务器价格相当便宜，最低只要15元人民币每个月，如果是openvz架构的vps更加的低廉，网速对于大多数人来说，自己家带宽可能还远远达不到它限制的那个带宽，虽然由于中国的特殊环境导致网速远远达不到理论速度，但是瘦死的骆驼比马大，总体速度还是比较理想的。<br>另外还有一点是，国内的vps必须要备案才能绑定域名，这对于很多人来说就比较坑了，虽然在一定程度上净化了中国的互联网环境，但是我觉得没啥卵用。国外的服务器并没有啥要求，只要付钱就能用，不需要任何手续，所以很方便。</p><h1 id="vultr服务器"><a href="#vultr服务器" class="headerlink" title="vultr服务器"></a>vultr服务器</h1><p>vultr是一个按时长收费的vps提供商<br>最低是每小时0.004美元，也就是大概3分钱<br>国外的服务器ip在国内容易被墙，所以如果ip被墙可以删除这个实例，然后换其他的服务器，当然也可以直接更换ip，但额外的ip是收费的，所以如果没有什么特殊需求，可以直接删除原本的实例，更换另外一个。<br>感觉这种收费模式简直就是为中国客户量身打造的。vultr支持支付宝付款，所以也不用担心付款的问题。另外，付款的时候最好不要挂代理，直接用本地网络付款即可，否则可能被判定为欺诈。</p><h1 id="注册vultr"><a href="#注册vultr" class="headerlink" title="注册vultr"></a>注册vultr</h1><p><a href="https://www.vultr.com/?ref=7311810" target="_blank" rel="noopener">https://www.vultr.com/?ref=7311810</a><br>这是我的分享注册链接，通过此链接注册你我双方都能获得十美元的奖励<br><img src="https://s1.ax1x.com/2018/03/31/9xyHQs.jpg" alt="9xyHQs.jpg"><br><img src="https://s1.ax1x.com/2018/03/31/9xyXwV.jpg" alt="9xyXwV.jpg"></p><h1 id="充值"><a href="#充值" class="headerlink" title="充值"></a>充值</h1><p>可以通过选择Alipay的方式支付<br><img src="https://s1.ax1x.com/2018/03/31/9xyzYF.jpg" alt="9xyzYF.jpg"></p><h1 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a>购买服务器</h1><p><img src="https://s1.ax1x.com/2018/03/31/9x6SW4.jpg" alt="9x6SW4.jpg"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;vultr
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【转载】CentOSDebianUbuntu系统 TCP-BBR 一键安装脚本</title>
+    <link href="http://dachengzi.cn/2018/03/31/CentOSDebianUbuntu%E7%B3%BB%E7%BB%9F%20TCP-BBR%20%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC/"/>
+    <id>http://dachengzi.cn/2018/03/31/CentOSDebianUbuntu系统 TCP-BBR 一键安装脚本/</id>
+    <published>2018-03-31T08:34:25.000Z</published>
+    <updated>2018-03-31T09:04:27.422Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://s1.ax1x.com/2018/03/31/9x0keU.jpg" alt="9x0keU.jpg"><br><a id="more"></a></p><h1 id="本脚本适用环境"><a href="#本脚本适用环境" class="headerlink" title="本脚本适用环境"></a>本脚本适用环境</h1><p>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+</p><p>虚拟技术：OpenVZ 以外的（KVM、Xen、VMware等）</p><p>内存要求：≥128M</p><p>日期　　：2017 年 01 月 13 日</p><h1 id="关于本脚本"><a href="#关于本脚本" class="headerlink" title="关于本脚本"></a>关于本脚本</h1><p>本脚本已在 Vultr 上的 VPS 全部测试通过。<br>当脚本检测到 VPS 的虚拟方式为 OpenVZ 时，会提示错误，并自动退出安装。<br>某些服务商（如 Linode、DigitalOcean）可能需要首先将 VPS 配置为可自定义内核，然后 grub2 的配置才会生效。<br>脚本运行完重启发现开不了机的，打开 VPS 后台控制面板的 VNC, 开机卡在 grub 引导, 手动选择内核即可。<br>由于是使用最新版系统内核，最好请勿在生产环境安装，以免产生不可预测之后果。</p><h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>使用root用户登录，运行以下命令：</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -<span class="keyword">N</span> --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//github.<span class="keyword">com</span>/teddysun/across/raw/master/bbr.<span class="keyword">sh</span> &amp;&amp; chmod +<span class="keyword">x</span> bbr.<span class="keyword">sh</span> &amp;&amp; bash bbr.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure><p>安装完成后，脚本会提示需要重启 VPS，输入 y 并回车后重启。</p><p>重启完成后，进入 VPS，验证一下是否成功安装最新内核并开启 TCP BBR，输入以下命令：</p><pre><code>uname -r# 查看内核版本，含有 4.9.0 就表示 OK 了# ————————————sysctl net.ipv4.tcp_available_congestion_control# 返回值一般为：# net.ipv4.tcp_available_congestion_control = bbr cubic reno# ————————————sysctl net.ipv4.tcp_congestion_control# 返回值一般为：# net.ipv4.tcp_congestion_control = bbr# ————————————sysctl net.core.default_qdisc# 返回值一般为：# net.core.default_qdisc = fq# ————————————lsmod | grep bbr# 返回值有 tcp_bbr 模块即说明bbr已启动。</code></pre><h1 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h1><p><a href="https://github.com/google/bbr/blob/master/Documentation/bbr-quick-start.md" target="_blank" rel="noopener">https://github.com/google/bbr/blob/master/Documentation/bbr-quick-start.md</a></p><p><a href="http://elrepo.org/tiki/tiki-index.php" target="_blank" rel="noopener">http://elrepo.org/tiki/tiki-index.php</a></p><p><a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9/" target="_blank" rel="noopener">http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9/</a></p><h1 id="更新日志："><a href="#更新日志：" class="headerlink" title="更新日志："></a>更新日志：</h1><p>2017 年 01 月 13 日</p><p>1.更新 内核为 4.9.3。</p><p>2017 年 01 月 09 日</p><p>1.更新 内核为 4.9.1。</p><p>其他BBR一键脚本：『原创』Debian/Ubuntu系统 TCP拥塞控制技术 ——TCP-BBR 一键安装脚本</p><p>本文章转载自：<a href="https://teddysun.com/489.html" target="_blank" rel="noopener">https://teddysun.com/489.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2018/03/31/9x0keU.jpg&quot; alt=&quot;9x0keU.jpg&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>【转载】ShadowsocksR MudbJSON模式多用户一键脚本 支持流量限制等</title>

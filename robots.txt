@@ -1,0 +1,5 @@
+User-agent:  Baiduspider
+Disallow:  /
+
+User-Agent:  360Spider
+Disallow:  /

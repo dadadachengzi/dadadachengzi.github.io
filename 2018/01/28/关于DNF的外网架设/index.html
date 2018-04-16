@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2018/03/21/978ZZQ.md.jpg">
 <meta property="og:image" content="https://s1.ax1x.com/2018/03/21/97J9jf.jpg">
 <meta property="og:image" content="https://s1.ax1x.com/2018/03/21/9783sU.jpg">
-<meta property="og:updated_time" content="2018-04-08T04:47:06.233Z">
+<meta property="og:updated_time" content="2018-04-16T13:43:22.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DNF的外网架设（第一部分）">
 <meta name="twitter:description" content="第一部分：服务端架设">
@@ -284,13 +284,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>第一部分：服务端架设<br><a id="more"></a><br><img src="https://s1.ax1x.com/2018/03/18/9oJBDg.jpg" alt="9oJBDg.jpg"><br>需要准备以下条件：<br>                 云服务器（是服务器，不是虚拟主机，且至少1G1H）<br>                 预装centos5.8或5.11系统（5系列启动速度快，但yum源缺少，下面会提到）<br>                 需要软件Xshell 5、WinSCP、navicat<br>                 DNF服务端</p>
-<h1 id="买服务器"><a href="#买服务器" class="headerlink" title="买服务器"></a>买服务器</h1><pre><code>推荐使用阿里云，腾讯云
+        <p>第一部分：服务端架设<br><a id="more"></a><br><img src="https://s1.ax1x.com/2018/03/18/9oJBDg.jpg" alt="9oJBDg.jpg"><br>对于外网架设需要准备以下条件：<br>                 云服务器（是服务器，不是虚拟主机，且至少1G1H）<br>                 预装centos5.8或5.11系统（5系列启动速度快，但yum源缺少，下面会提到）<br>                 需要软件Xshell 5、WinSCP、navicat<br>                 DNF服务端</p>
+<h1 id="买服务器"><a href="#买服务器" class="headerlink" title="买服务器"></a>买服务器</h1><pre><code>推荐使用阿里云，腾讯云进行DNF外网的架设
 ==注意：服务器很多端口默认关闭，需要在安全组里面打开所有端口==
 
 
 
-  以下我将采用腾讯云
+  以下我将使用腾讯云进行外网的架设
   centos5.8系统
   1H2G
 </code></pre><h1 id="下载软件和服务端"><a href="#下载软件和服务端" class="headerlink" title="下载软件和服务端"></a>下载软件和服务端</h1><pre><code>Xshell 5：百度下载
@@ -311,7 +311,7 @@ navicat：百度下载
 <h1 id="修改对应位置的外网IP"><a href="#修改对应位置的外网IP" class="headerlink" title="修改对应位置的外网IP"></a>修改对应位置的外网IP</h1><p>用Navicat打开数据库d_taiwan的db_connect表，把db_ip字段所有的192.168.200.131改成你的外网IP。<br>连接地址：你服务器的公网ip<br>账号game  密码uu5!^%jg<br><img src="https://s1.ax1x.com/2018/03/21/978ZZQ.md.jpg" alt="978ZZQ.md.jpg"></p>
 <p>#服务端程序里面的用命令改，注意把“你的外网IP”替换成你的外网IP<br><img src="https://s1.ax1x.com/2018/03/21/97J9jf.jpg" alt="97J9jf.jpg"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/dxf/</span><br><span class="line">sed -i <span class="string">"s/192.168.200.131/这个位置填你外网ip/g"</span> `find . -type f -name <span class="string">"*.tbl"</span>`</span><br><span class="line">sed -i <span class="string">"s/192.168.200.131/这个位置填你外网ip/g"</span> `find . -type f -name <span class="string">"*.cfg"</span>`</span><br></pre></td></tr></table></figure></p>
 <h1 id="设置虚拟内存"><a href="#设置虚拟内存" class="headerlink" title="设置虚拟内存"></a>设置虚拟内存</h1><p><img src="https://s1.ax1x.com/2018/03/21/9783sU.jpg" alt="9783sU.jpg"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /var/</span><br><span class="line">dd <span class="keyword">if</span>=/dev/zero of=swapfile bs=<span class="number">1</span>M count=<span class="number">8192</span></span><br><span class="line">mkswap swapfile </span><br><span class="line">swapon swapfile</span><br><span class="line">echo /var/swapfile swap swap defaults <span class="number">0</span> <span class="number">0</span>  &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure></p>
-<p>服务端架设到此结束</p>
+<p>服务端架设到此结束<br>这里是DNF外网架设的第一部分，服务端架设，弄好服务端，其它都不是问题</p>
 
       
     </div>
@@ -323,7 +323,7 @@ navicat：百度下载
         <p><span>本文标题:</span><a  href="/2018/01/28/关于DNF的外网架设/">DNF的外网架设（第一部分）</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 大橙子 的个人博客">大橙子</a></p>
         <p><span>发布时间:</span>2018年01月28日 - 13时50分</p>
-        <p><span>最后更新:</span>2018年04月08日 - 12时47分</p>
+        <p><span>最后更新:</span>2018年04月16日 - 21时43分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/01/28/关于DNF的外网架设/" title="DNF的外网架设（第一部分）">http://dachengzi.cn/2018/01/28/关于DNF的外网架设/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dachengzi.cn/2018/01/28/关于DNF的外网架设/　　作者: 大橙子" title=""></span>

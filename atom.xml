@@ -149,24 +149,6 @@
   </entry>
   
   <entry>
-    <title>让文章仅显示摘要部分</title>
-    <link href="http://dachengzi.cn/2018/01/29/%E8%AE%A9%E6%96%87%E7%AB%A0%E4%BB%85%E6%98%BE%E7%A4%BA%E6%91%98%E8%A6%81%E9%83%A8%E5%88%86/"/>
-    <id>http://dachengzi.cn/2018/01/29/让文章仅显示摘要部分/</id>
-    <published>2018-01-29T07:57:43.000Z</published>
-    <updated>2018-01-31T06:28:11.617Z</updated>
-    
-    <content type="html"><![CDATA[<p>博客首页文章默认是显示所有内容，而不是截取摘要缩略显示，百度到的解决方法是在文章中间添加<a id="more"></a>代码，从而能让这个代码上面的内容显示，下面的则折叠起来，并显示 继续阅读全文 的按钮，点击按钮后，页面就会自动跳转到该文章页面。</p><h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure><h1 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h1><p>正文内容<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more&gt;</span><br></pre></td></tr></table></figure></p><p>正文内容</p><h1 id="继续阅读全文改为阅读全文"><a href="#继续阅读全文改为阅读全文" class="headerlink" title="继续阅读全文改为阅读全文"></a>继续阅读全文改为阅读全文</h1><p>但是问题来了，它跳转页面后自动定位到代码以下的内容，想看上面从头开始看需要手动翻阅，感觉有点麻烦，百度了好长时间也没有找到方法来解决这个问题。所以只好自己慢慢探索，通过查看主页的源代码我找到了问题的答案。自动跳转是因为 “继续阅读全文” 所在的p标签内存在这一个article-more-link的class类名，由此我又开始了探索的过程，最后我在那个p标签里面的a标签看到了#more的字样，我猜想它就是靠这个来定位内容的，删除more这个字样后重新部署了博客，问题果然解决了，点击 继续阅读全文 能够从头开始。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;博客首页文章默认是显示所有内容，而不是截取摘要缩略显示，百度到的解决方法是在文章中间添加
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>DNF的外网架设（第一部分）</title>
     <link href="http://dachengzi.cn/2018/01/28/%E5%85%B3%E4%BA%8EDNF%E7%9A%84%E5%A4%96%E7%BD%91%E6%9E%B6%E8%AE%BE/"/>
     <id>http://dachengzi.cn/2018/01/28/关于DNF的外网架设/</id>

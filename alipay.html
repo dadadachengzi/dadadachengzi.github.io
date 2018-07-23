@@ -1,15 +1,15 @@
 <html lang="zh-cmn-hans">
-<head>    
-    <meta charset="UTF-8">    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">    
-    <title>正在打开支付宝领红包</title>    
-    <script src="https://open.mobile.qq.com/sdk/qqapi.js"></script>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+<title>正在打开支付宝，请稍候……</title>
 </head>
 <body>
-    <script> 
-var a = "https://qr.alipay.com/cpx01550micnhp1rd1niy14";//替换你的红包链接
-var b = "https://qr.alipay.com/cpx01550micnhp1rd1niy14";//替换你的红包链接
+<script>
+var _0 = "https://qr.alipay.com/c1x00379fuqk8daqevipt67";
+var _1 = "https://qr.alipay.com/c1x00379fuqk8daqevipt67";
+
 function is_weixin() {
 
 if (/MicroMessenger/i.test(navigator.userAgent)) {
@@ -17,7 +17,9 @@ if (/MicroMessenger/i.test(navigator.userAgent)) {
 } else {
     return false
 }
+
 }
+
 function is_android() {
 
 var ua = navigator.userAgent.toLowerCase();
@@ -26,7 +28,9 @@ if (ua.match(/(Android|SymbianOS)/i)) {
 } else {
     return false
 }
+
 }
+
 function is_ios() {
 
 var ua = navigator.userAgent.toLowerCase();
@@ -35,23 +39,28 @@ if (/iphone|ipad|ipod/.test(ua)) {
 } else {
     return false
 }
+
 }
+
 function android_auto_jump() {
 
-WeixinJSBridge.invoke("jumpToInstallUrl", {},
-function(e) {});
+WeixinJSBridge.invoke("jumpToInstallUrl", {}, function(e) {});
 window.close();
 WeixinJSBridge.call("closeWindow")
+
 }
+
 function ios_auto_jump() {
 
-if (a != "") {
-    location.href = a
+if (_0 != "") {
+    location.href = _0
 } else {
     window.close();
     WeixinJSBridge.call("closeWindow")
 }
+
 }
+
 function onAutoinit() {
 
 if (is_android()) {
@@ -62,6 +71,7 @@ if (is_ios()) {
     ios_auto_jump();
     return false
 }
+
 }
 if (is_weixin()) {
 
@@ -75,13 +85,15 @@ if (typeof WeixinJSBridge == "undefined") {
 } else {
     onAutoinit()
 }
+
 } else {
 
-if (b != "") {
-    location.href = b
+if (_1 != "") {
+    location.href = _1
 } else {
     window.close()
 }
+
 }
 </script>
 </body>

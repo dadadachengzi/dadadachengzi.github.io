@@ -13,9 +13,9 @@
 <link rel="stylesheet" href="../css/vegas.min.css">
 <link rel="stylesheet" href="../css/highlight-railscasts.css">
 <link rel="stylesheet" href="../css/jquery.fancybox.css">
-<link rel="stylesheet" href="../css/iconfont.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1640799_r0tmae7wgc.css">
 <link rel="stylesheet" href="../css/jquery.fancybox-thumbs.css">
-<link rel="stylesheet" href="../css/plyr.css">
+
   
 </head>
 <body background="../bg.jpg"
@@ -35,8 +35,8 @@ background-attachment: fixed;"
     
 	  <!--about主页面-->
 	  <div>
-		<table border="1" align="center" cellspacing="0" bordercolor="#858585">
-  <tr height="60">
+		<table border="1" align="center" cellspacing="0" bordercolor="#D0D0D0">
+  <tr>
     <th width="150">
 		<font size="3" color="red">2020年2月13日</font>
 	</th>
@@ -44,17 +44,27 @@ background-attachment: fixed;"
     <th width="350"><font size="3" color="red">开通网站</font></th>
 	<th width="250">&nbsp;</th>
   </tr>
-  <tr height="60">
+  <tr>
     <td>
-		<font size="3" color="red">2020年2月14日</font>
+		<font size="3" color="red"><b>2020年2月14日</b></font>
 	</td>
 	<td>&nbsp;</td>	
     <td>
-	  <font size="3" color="red"><b>更新了留言板功能...来必力中文页面歇菜了，暂时只有英文页面</font>
+		<font size="3" color="red"><b>更新了留言板功能...来必力中文页面歇菜了，暂时只有英文页面</b></font>
 	</td>
 	  <td>&nbsp;</td>	
   </tr>
-  <tr height="60">
+  <tr>
+    <td>
+		<font size="3" color="red"><b>2020年2月15日</b></font>
+	</td>
+	<td>&nbsp;</td>	
+    <td>
+		<font size="3" color="red"><b>更新了几个首页图标...</b></font>
+	</td>
+	  <td>&nbsp;</td>	
+  </tr>			
+  <tr>
     <td>
 		<font size="3" color="red">...</font>
 	</td>
@@ -94,48 +104,52 @@ background-attachment: fixed;"
  
         
       </ul>
-     <ul class="social-icon">
+		
+ <!--阿里巴巴矢量库图标-->
+<ul class="social-icon">
   
   
     <li>
-      <a href="#">
+      <a href="https://www.google.com">
         
-          <i class="icon iconfont github">&#xe606;</i>
+          <i class="icon iconfont icon-google"></i>
         
       </a>
     </li>
   
     <li>
-      <a href="#">
+      <a href="https://www.baidu.com">
         
-          <i class="icon iconfont coding">&#xe607;</i>
+          <i class="icon iconfont icon-baidu"></i>
+        
+      </a>
+    </li>
+		  
+   <li>
+      <a href="https://www.bilibili.com">
+        
+          <i class="icon iconfont icon-bilibili"></i>
+        
+      </a>
+    </li>
+		  
+    <li>
+      <a href="https://www.google.com">
+        
+          <i class="icon iconfont icon-youtube"></i>
         
       </a>
     </li>
   
     <li>
-      <a href="#">
+      <a href="https://github.com">
         
-          <i class="icon iconfont twitter">&#xe600;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="#">
-        
-          <i class="icon iconfont weibo">&#xe602;</i>
+          <i class="icon iconfont icon-github"></i>
         
       </a>
     </li>
   
-    <li>
-      <a href="#">
-        
-          <i class="icon iconfont douban">&#xe609;</i>
-        
-      </a>
-    </li>
+   
   
 </ul>
     </div>
@@ -149,44 +163,40 @@ background-attachment: fixed;"
   
   
     <li>
-      <a href="#">
+      <a href="https://www.google.com">
         
-          <i class="icon iconfont github">&#xe606;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="#">
-        
-          <i class="icon iconfont coding">&#xe607;</i>
+          <i class="icon iconfont icon-google"></i>
         
       </a>
     </li>
   
     <li>
-      <a href="#">
+      <a href="https://www.baidu.com">
         
-          <i class="icon iconfont twitter">&#xe600;</i>
+          <i class="icon iconfont icon-baidu"></i>
+        
+      </a>
+    </li>
+		  
+  
+		  
+    <li>
+      <a href="https://www.google.com">
+        
+          <i class="icon iconfont icon-youtube"></i>
         
       </a>
     </li>
   
     <li>
-      <a href="#">
+      <a href="https://github.com">
         
-          <i class="icon iconfont weibo">&#xe602;</i>
+          <i class="icon iconfont icon-github"></i>
         
       </a>
     </li>
   
-    <li>
-      <a href="#">
-        
-          <i class="icon iconfont douban">&#xe609;</i>
-        
-      </a>
-    </li>
+   
   
 </ul>
   </div>
@@ -210,7 +220,7 @@ background-attachment: fixed;"
   
     <script src="../js/jquery.fancybox-thumbs.js"></script>
   
-    <script src="../js/plyr.js"></script>
+    
   
 
 <script>
@@ -253,28 +263,7 @@ $(".fancybox-thumb").fancybox({
   }
 });
 
-// show video with plyr
-$(".video-container iframe").each(function(i){
-  var url = $(this).attr('src');
-  var id = url.split('index.html').pop();
-  var plyrContainer = document.createElement('div');
-  plyrContainer.className = 'plyr';
-  var plyrElement = document.createElement('div');
-  plyrElement.dataset.videoId = id;
-  switch(true) {
-    case url.search('youtube.com') >= 0:
-      plyrElement.dataset.type = 'youtube';
-      break;
-    case url.search('vimeo.com') >= 0:
-      plyrElement.dataset.type = 'vimeo';
-      break;
-    default:
-      return;
-  };
-  plyrContainer.appendChild(plyrElement);
-  $(this).parent().html(plyrContainer);
-});
-plyr.setup('.plyr', {iconUrl: '../css/sprite.svg'});
+
 </script>
 </body>
 

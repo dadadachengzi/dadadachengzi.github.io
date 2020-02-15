@@ -6,16 +6,14 @@
  
   <title>留言板</title>
   
-  <link rel="shortcut icon" href="../favicon.ico">
-  
-  
+<link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" href="../css/random.css">
 <link rel="stylesheet" href="../css/vegas.min.css">
 <link rel="stylesheet" href="../css/highlight-railscasts.css">
 <link rel="stylesheet" href="../css/jquery.fancybox.css">
-<link rel="stylesheet" href="../css/iconfont.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1640799_r0tmae7wgc.css">
 <link rel="stylesheet" href="../css/jquery.fancybox-thumbs.css">
-<link rel="stylesheet" href="../css/plyr.css">
+
   
 </head>
 <body background="../bg.jpg"
@@ -81,48 +79,53 @@ background-attachment: fixed;"
  
         
       </ul>
-     <ul class="social-icon">
+
+  
+   <!--阿里巴巴矢量库图标--> 
+<ul class="social-icon">
   
   
     <li>
-      <a href="#">
+      <a href="https://www.google.com">
         
-          <i class="icon iconfont github">&#xe606;</i>
+          <i class="icon iconfont icon-google"></i>
         
       </a>
     </li>
   
     <li>
-      <a href="#">
+      <a href="https://www.baidu.com">
         
-          <i class="icon iconfont coding">&#xe607;</i>
+          <i class="icon iconfont icon-baidu"></i>
+        
+      </a>
+    </li>
+		  
+   <li>
+      <a href="https://www.bilibili.com">
+        
+          <i class="icon iconfont icon-bilibili"></i>
+        
+      </a>
+    </li>
+		  
+    <li>
+      <a href="https://www.google.com">
+        
+          <i class="icon iconfont icon-youtube"></i>
         
       </a>
     </li>
   
     <li>
-      <a href="#">
+      <a href="https://github.com">
         
-          <i class="icon iconfont twitter">&#xe600;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="#">
-        
-          <i class="icon iconfont weibo">&#xe602;</i>
+          <i class="icon iconfont icon-github"></i>
         
       </a>
     </li>
   
-    <li>
-      <a href="#">
-        
-          <i class="icon iconfont douban">&#xe609;</i>
-        
-      </a>
-    </li>
+   
   
 </ul>
     </div>
@@ -136,44 +139,40 @@ background-attachment: fixed;"
   
   
     <li>
-      <a href="#">
+      <a href="https://www.google.com">
         
-          <i class="icon iconfont github">&#xe606;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="#">
-        
-          <i class="icon iconfont coding">&#xe607;</i>
+          <i class="icon iconfont icon-google"></i>
         
       </a>
     </li>
   
     <li>
-      <a href="#">
+      <a href="https://www.baidu.com">
         
-          <i class="icon iconfont twitter">&#xe600;</i>
+          <i class="icon iconfont icon-baidu"></i>
+        
+      </a>
+    </li>
+		  
+  
+		  
+    <li>
+      <a href="https://www.google.com">
+        
+          <i class="icon iconfont icon-youtube"></i>
         
       </a>
     </li>
   
     <li>
-      <a href="#">
+      <a href="https://github.com">
         
-          <i class="icon iconfont weibo">&#xe602;</i>
+          <i class="icon iconfont icon-github"></i>
         
       </a>
     </li>
   
-    <li>
-      <a href="#">
-        
-          <i class="icon iconfont douban">&#xe609;</i>
-        
-      </a>
-    </li>
+   
   
 </ul>
   </div>
@@ -197,7 +196,7 @@ background-attachment: fixed;"
   
     <script src="../js/jquery.fancybox-thumbs.js"></script>
   
-    <script src="../js/plyr.js"></script>
+    
   
 
 <script>
@@ -240,28 +239,7 @@ $(".fancybox-thumb").fancybox({
   }
 });
 
-// show video with plyr
-$(".video-container iframe").each(function(i){
-  var url = $(this).attr('src');
-  var id = url.split('index.html').pop();
-  var plyrContainer = document.createElement('div');
-  plyrContainer.className = 'plyr';
-  var plyrElement = document.createElement('div');
-  plyrElement.dataset.videoId = id;
-  switch(true) {
-    case url.search('youtube.com') >= 0:
-      plyrElement.dataset.type = 'youtube';
-      break;
-    case url.search('vimeo.com') >= 0:
-      plyrElement.dataset.type = 'vimeo';
-      break;
-    default:
-      return;
-  };
-  plyrContainer.appendChild(plyrElement);
-  $(this).parent().html(plyrContainer);
-});
-plyr.setup('.plyr', {iconUrl: '../css/sprite.svg'});
+
 </script>
 </body>
 

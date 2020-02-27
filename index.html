@@ -14,12 +14,16 @@
 <link rel="stylesheet" href="https://at.alicdn.com/t/font_1640799_r0tmae7wgc.css">
 <link rel="stylesheet" href="css/jquery.fancybox-thumbs.css">
   <style>
-	  
+	          .kd {
+				   margin-left: 27%;
+		           width: 40%;
+		           height: 36px;
+	              }
 	  
 		  .search {
 			      	height: 36px;
-	                line-height: 36px;
-	                width: 400px;
+	                line-height: 100%;
+	                width: 100%;
 	                border: 1px solid #b0b0b0;
 	                background: url(image/ss.png) no-repeat 2%;
 	                background-size: 22px 22px;
@@ -41,16 +45,7 @@ box-shadow:0px 3px 3px #c8c8c8 ;
     -webkit-box-shadow:0px 3px 3px #c8c8c8 ;
 box-shadow:0px 3px 3px #c8c8c8 ;
 	              } 
-	      .button {  
-                   height: 40px;
-	               line-height: 40px;
-	               width: 48px;
-	               border: 0px;
-	               background-color: #3385fF;
-	               color: white;  
-			       border-radius: 15px;
-			       
-	              }
+
   </style>
 
 </head>
@@ -71,9 +66,9 @@ background-attachment: fixed;"
     <hr >
 	  <!--搜索引擎-->
 	<br>
-	  <div>
+	  <div class="kd">
 	  <form action="http://www.baidu.com/s"   method="get" target="_self" autocomplete="off">
-<input  type="text" id="search-input" name="wd" class="search" placeholder=" " />
+      <input  type="text" id="search-input" name="wd" class="search" placeholder=" " />
 		  
       </form>
 

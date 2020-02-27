@@ -6,19 +6,55 @@
  
   <title>首页</title>
   
-  <link rel="shortcut icon" href="favicon.ico">
-  
-  
+<link rel="shortcut icon" href="image/favicon.ico">
 <link rel="stylesheet" href="css/random.css">
 <link rel="stylesheet" href="css/vegas.min.css">
 <link rel="stylesheet" href="css/highlight-railscasts.css">
 <link rel="stylesheet" href="css/jquery.fancybox.css">
 <link rel="stylesheet" href="https://at.alicdn.com/t/font_1640799_r0tmae7wgc.css">
 <link rel="stylesheet" href="css/jquery.fancybox-thumbs.css">
+  <style>
+	  
+	  
+		  .search {
+			      	height: 36px;
+	                line-height: 36px;
+	                width: 400px;
+	                border: 1px solid #b0b0b0;
+	                background: url(image/ss.png) no-repeat 2%;
+	                background-size: 22px 22px;
+			        padding-left: 40px;
+			        border-radius: 30px;
+			        
+				  }
+	  
+	 .search:focus {
+   
+    outline: 0;
+	border-color: #C9C9C9; 	 
+ -webkit-box-shadow:0px 3px 3px #c8c8c8 ;
+box-shadow:0px 3px 3px #c8c8c8 ;
+	              }
+	  .search:hover {
+    border-color: #C9C9C9; 
+    outline: 0;
+    -webkit-box-shadow:0px 3px 3px #c8c8c8 ;
+box-shadow:0px 3px 3px #c8c8c8 ;
+	              } 
+	      .button {  
+                   height: 40px;
+	               line-height: 40px;
+	               width: 48px;
+	               border: 0px;
+	               background-color: #3385fF;
+	               color: white;  
+			       border-radius: 15px;
+			       
+	              }
+  </style>
 
-  
 </head>
-<body background="bg.jpg"
+<body background="image/bg.jpg"
 style=" background-repeat:no-repeat ;
 background-size:100% 100%;
 background-attachment: fixed;"
@@ -26,13 +62,23 @@ background-attachment: fixed;"
 <div class="random-center hide-area">
   <div id="random-index">
     <div class="center-field">
-      <img class="avatar" src="avatar.JPEG" width=120 height=120 onClick="openUserCard()">
+      <img class="avatar" src="image/avatar.JPEG" width=120 height=120 onClick="openUserCard()">
     </div>
     <div class="center-field">
       <div class="title" onClick="openUserCard()">Hey,Man_</div>
       <div class="sub-title" onClick="openUserCard()">上善若水,水善利万物而不争,处众人之所恶,故几于道。 </div>
     </div>
     <hr >
+	  <!--搜索引擎-->
+	<br>
+	  <div>
+	  <form action="http://www.baidu.com/s"   method="get" target="_self" autocomplete="off">
+<input  type="text" id="search-input" name="wd" class="search" placeholder=" " />
+		  
+      </form>
+
+	  </div>
+	
     <div class="center-field">
       <ul class="index-nav-link">
         
@@ -159,8 +205,6 @@ background-attachment: fixed;"
 
 
 
-
-
     <script src="js/jquery-2.2.3.min.js"></script>
   
     <script src="js/vegas.min.js"></script>
@@ -219,6 +263,7 @@ $(".fancybox-thumb").fancybox({
 });
 
 </script>
+ 
 </body>
 
 
